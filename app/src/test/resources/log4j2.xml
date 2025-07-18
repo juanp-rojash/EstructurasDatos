@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="info" strict="true" name="Log4j2Config">
+
+    <Properties>
+        <Property name="log_pattern">%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n</Property>
+        <Property name="app_log_root">logs</Property>
+        <Property name="repaso_log">repaso_${hostName}</Property>
+    </Properties>
+
+    <Appenders>
+        <RollingFile name="FileLogger" fileName="${app_log_root}/${repaso_log}.log"
+                     filePattern="${app_log_root}/${repaso_log}-%d{yyyy-MM-dd}-%i.log.gz"
+                     policy="Policies">
+            <PatternLayout pattern="${log_pattern}"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+                <SizeBasedTriggeringPolicy size="100MB"/>
+            </Policies>
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="FileLogger"/>
+        </Root>
+        <Logger name="estructurasdatos" level="debug" additivity="false">
+            <AppenderRef ref="FileLogger"/>
+        </Logger>
+    </Loggers>
+
+</Configuration>
