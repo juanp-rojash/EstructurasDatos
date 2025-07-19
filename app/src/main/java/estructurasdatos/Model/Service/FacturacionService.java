@@ -29,7 +29,7 @@ public class FacturacionService {
             String mensajeReparaciones = "";
             ArrayList<Reparacion> reparaciones = (ArrayList<Reparacion>) vehiculo.getReparacion().clone();
 
-            operacionTraspaso = vehiculo.traspasoReparacionesHistorico(vehiculo);
+            operacionTraspaso = vehiculo.traspasoReparacionesHistorico();
 
             if(!operacionTraspaso) {
                 logger.error("Error al traspasar las reparaciones al historial del vehiculo: " + vehiculo.getPlaca());

@@ -94,14 +94,14 @@ public abstract class Vehiculo implements Conduccion{
 
     }
 
-    public boolean traspasoReparacionesHistorico(Vehiculo vehiculo) {
+    public boolean traspasoReparacionesHistorico() {
 
         try {
 
             logger.info("Transfiriendo reparaciones al histórico del vehículo: " + marca + " - " + modelo + " - " + placa);
 
-            vehiculo.historialReparaciones.addAll(reparacion);
-            vehiculo.reparacion.clear();
+            historialReparaciones.addAll(reparacion);
+            reparacion.clear();
 
             return true;
 
