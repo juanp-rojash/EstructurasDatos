@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="info" strict="true" name="Log4j2Config">
+
+    <Properties>
+
+        <Property name="log_pattern">%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n</Property>
+        <Property name="app_log_root">logs</Property>
+        <Property name="analisis_log">repaso_${hostName}</Property>
+        <Property name="analisis_time">repaso.tiempos_${hostName}</Property>
+        <Property name="analisis_performance">repaso.performance_${hostName}</Property>
+
+    </Properties>
+
+    <Appenders>
+
+        <RollingFile name="FileLogger" fileName="${app_log_root}/${analisis_log}.log"
+                     filePattern="${app_log_root}/${analisis_log}-%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout pattern="${log_pattern}"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+                <SizeBasedTriggeringPolicy size="100MB"/>
+            </Policies>
+        </RollingFile>
+
+        <RollingFile name="FileLoggerTiempos" fileName="${app_log_root}/${analisis_time}.log"
+                     filePattern="${app_log_root}/${analisis_time}-%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout pattern="${log_pattern}"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+                <SizeBasedTriggeringPolicy size="100MB"/>
+            </Policies>
+        </RollingFile>
+
+        <RollingFile name="FileLoggerPerformance" fileName="${app_log_root}/${analisis_performance}.log"
+                     filePattern="${app_log_root}/${analisis_performance}-%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout pattern="${log_pattern}"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+                <SizeBasedTriggeringPolicy size="100MB"/>
+            </Policies>
+        </RollingFile>
+
+    </Appenders>
+
+    <Loggers>
+
+        <Root level="info">
+            <AppenderRef ref="FileLogger"/>
+        </Root>
+
+        <Logger name="main" level="debug" additivity="false">
+            <AppenderRef ref="FileLogger"/>
+        </Logger>
+
+        <Logger name="tiempos" level="debug" additivity="false">
+            <AppenderRef ref="FileLoggerTiempos"/>
+        </Logger>
+
+        <Logger name="performance" level="debug" additivity="false">
+            <AppenderRef ref="FileLoggerPerformance"/>
+        </Logger>
+
+    </Loggers>
+
+</Configuration>
