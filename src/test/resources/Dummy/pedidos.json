@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "550e8400-e29b-41d4-a716-446655440000",
+    "Cliente": {
+      "Identificacion": "1001234567",
+      "Nombre": "Ana Bustamante"
+    },
+    "Precio": 125000.50
+  },
+  {
+    "Id": "123e4567-e89b-12d3-a456-426614174000",
+    "Cliente": {
+      "Identificacion": "987654321",
+      "Nombre": "Carlos Restrepo"
+    },
+    "Precio": 89900.00
+  },
+  {
+    "Id": "987e6543-e21b-12d3-a456-426614174111",
+    "Cliente": {
+      "Identificacion": "1122334455",
+      "Nombre": "Sofia Vergara"
+    },
+    "Precio": 45000.00
+  }
+]
