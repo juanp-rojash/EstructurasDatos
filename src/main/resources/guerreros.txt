@@ -1,0 +1,13 @@
+id;name;ki;race;gender;image
+1;Goku;60.000.000;Saiyan;Male;https://dragonball-api.com/characters/goku_normal.webp
+2;Vegeta;54.000.000;Saiyan;Male;https://dragonball-api.com/characters/vegeta_normal.webp
+3;Piccolo;2.000.000;Namekian;Male;https://dragonball-api.com/characters/picolo_normal.webp
+4;Bulma;0;Human;Female;https://dragonball-api.com/characters/bulma.webp
+5;Freezer;530.000;Frieza Race;Male;https://dragonball-api.com/characters/Freezer.webp
+6;Zarbon;20.000;Frieza Race;Male;https://dragonball-api.com/characters/zarbon.webp
+7;Dodoria;18.000;Frieza Race;Male;https://dragonball-api.com/characters/dodoria.webp
+8;Ginyu;9.000;Frieza Race;Male;https://dragonball-api.com/characters/ginyu.webp
+9;Celula;250.000.000;Android;Male;https://dragonball-api.com/characters/celula.webp
+10;Gohan;45.000.000;Saiyan;Male;https://dragonball-api.com/characters/gohan.webp
+
+s
